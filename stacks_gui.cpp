@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 #include<graphics.h>
+//constant keeping track of y coordinates of the bottom of the stack
 #define stckbtm 420
 using namespace std;
 //function to set the environment
@@ -77,7 +78,7 @@ void processprint(vector<char> proc, string vals)
 {
     int top=30;
     //sets the OPERATIONS heading
-    outtextxy(400,top,"OPERATIONS:");
+    outtextxy(380,top-5,"OPERATIONS:");
     int i=0,j=0;
     top+=25;
     //prints all the previously occurred processes
@@ -131,7 +132,7 @@ void deletebox(int top, int sze,vector<char> stk,vector<char> proc, string vals)
 {
     char c=*(stk.end()-1);
     int j;
-    for(int top1=top;top1>=20;top1--)
+    for(int top1=top;top1>=50;top1--)
     {
     //creating the environment
     createStackgrap(sze);
@@ -192,7 +193,7 @@ void deletebox(int top, int sze,vector<char> stk,vector<char> proc, string vals)
 void insertbox(char* val,int top, int sze,vector<char> stk,vector<char> proc, string vals)
 {
     //insertion in stack
-    int top1=20;
+    int top1=50;
     int j;
     char c=*val;
     for(;top1<=top;top1++)
@@ -405,5 +406,6 @@ int main()
     outtextxy(250,200,"END OF ANIMATION");
     //getting a character as a signal to close the graph window
     getch();
+    //closes the graph window
     closegraph();
 }
